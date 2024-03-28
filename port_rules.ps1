@@ -5,21 +5,7 @@
 ####################################################################################################
 
 # Check if the script is running with administrative privileges
-#if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-#    Write-Host "Not running with administrative privileges, attempting to elevate..." -ForegroundColor Yellow
-#
-#    # Execute the script again with elevated permissions
-#    Start-Process -FilePath "powershell.exe" -ArgumentList "-File", "$PSScriptRoot" -Verb RunAs
-#}
-
-# Your script logic goes here
-
-
-
-# Check if the script is running with administrative privileges
 $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
-
-
 
 # Function to check for port
 function LookForPort {
